@@ -342,8 +342,8 @@ h3 {
   box-shadow: 0 12px 30px rgba(38, 49, 46, 0.06);
 }
 
-.program-grid span,
-.flow-grid span {
+.program-grid article > span,
+.flow-grid article > span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -720,8 +720,8 @@ h3 {
     padding: 20px 18px;
   }
 
-  .program-grid span,
-  .flow-grid span {
+  .program-grid article > span,
+  .flow-grid article > span {
     width: 34px;
     height: 34px;
     margin-bottom: 12px;
