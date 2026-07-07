@@ -252,5 +252,31 @@
       </div>
     </footer>
     <a class="fixed-mobile-cta" href="#trial"><span class="keep">平日日中の</span><span class="keep">体験を予約</span></a>
+    <script>
+      (() => {
+        const fixedCta = document.querySelector(".fixed-mobile-cta");
+        const hero = document.querySelector(".hero");
+        const trial = document.querySelector("#trial");
+        const mobileQuery = window.matchMedia("(max-width: 640px)");
+
+        if (!fixedCta || !hero || !trial) return;
+
+        const updateFixedCta = () => {
+          if (!mobileQuery.matches) {
+            fixedCta.classList.remove("is-visible");
+            return;
+          }
+
+          const heroBottom = hero.getBoundingClientRect().bottom;
+          const trialTop = trial.getBoundingClientRect().top;
+          const shouldShow = heroBottom < 120 && trialTop > window.innerHeight * 0.72;
+          fixedCta.classList.toggle("is-visible", shouldShow);
+        };
+
+        updateFixedCta();
+        window.addEventListener("scroll", updateFixedCta, { passive: true });
+        window.addEventListener("resize", updateFixedCta);
+      })();
+    </script>
   </body>
 </html>
