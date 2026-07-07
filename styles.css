@@ -774,5 +774,15 @@ h3 {
     font-size: 0.96rem;
     font-weight: 700;
     line-height: 1.25;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(18px);
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .fixed-mobile-cta.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 }
